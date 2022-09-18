@@ -1,0 +1,260 @@
+@import "_utility";
+
+html {
+    font-family: "Jost", sans-serif;
+    color: var(--primary-text-color);
+    background-color: var(--primary-bg-color);
+
+    transition: background-color 0.2s;
+}
+
+html[data-theme='light'] {
+    .toggle-dark {
+        display: block;
+    }
+
+    .toggle-light {
+        display: none;
+    }
+}
+
+html[data-theme='dark'] {
+    .toggle-dark {
+        display: none;
+    }
+
+    .toggle-light {
+        display: block;
+    }
+}
+
+#mode {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: var(--primary-text-color);
+    cursor: pointer;
+}
+
+a, a:visited {
+    color: var(--primary-text-color);
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.text {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 12px 0;
+}
+
+.hero {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 12px;
+
+    .hero-image {
+        width: 600px;
+    }
+
+    .hero-description {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .hero-cta {
+        margin-top: 40px;
+    }
+}
+
+.button {
+    border: 2px solid var(--primary-text-color);
+    border-radius: 4px;
+    padding: 7px 18px;
+    font-weight: 500;
+    font-size: 24px;
+    text-decoration: none;
+
+    transition: background-color .2s;
+
+    &:hover {
+        background-color: var(--primary-text-color);
+        color: var(--primary-bg-color);
+    }
+}
+
+.content {
+    width: 800px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .hero .hero-image {
+        width: 75%;
+    }
+
+    .content {
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    section .schedule-list,
+    section .team-list {
+        width: 100%;
+
+        .date {
+            font-size: 14px;
+        }
+    }
+
+    section {
+        width: 100%;
+    }
+
+    #mode svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+// .countdown-section {
+// }
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ol {
+        display: flex;
+        flex-direction: row;
+        font-weight: 700;
+        justify-content: center;
+        list-style: none;
+        width: 600px;
+
+        .wordmark {
+            font-style: italic;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        li {
+            padding: 2px 16px;
+        }
+    }
+}
+
+footer {
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    height: 40px;
+
+    .subtext {
+        flex: 1;
+        text-align: right;
+    }
+}
+
+hr {
+    border-color: var(--primary-text-color);
+    background-color: var(--primary-text-color);
+    color: var(--primary-text-color);
+    border-bottom: none;
+}
+
+.welcome-text {
+    border-top: 1px solid var(--primary-text-color);
+}
+
+.schedule-list {
+    width: 600px;
+
+    display: flex;
+    flex-direction: column;
+
+    .schedule-item {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        margin: 12px 0;
+
+        .name {
+            align-self: flex-start;
+            text-align: left;
+            flex: 1;
+            padding-top: 6px;
+        }
+
+        .date {
+            align-self: flex-end;
+            text-align: right;
+            padding: 6px 12px;
+            color: var(--primary-bg-color);
+            background-color: var(--primary-text-color);
+            font-weight: 600;
+            border-radius: 4px;
+        }
+    }
+}
+
+.team-list {
+    width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .team-item {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin: 12px 0;
+    }
+
+    .team-name {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .team-manager {
+        font-style: italic;
+        padding: 12px 0;
+    }
+}
+
+ol {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+    list-style: none;
+}
